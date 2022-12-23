@@ -4780,3 +4780,9 @@ Java Model Exception: Java Model Status [[Working copy] __2F_BookRental_2F_src_2
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-23 22:02:32.852
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-23 22:11:45.712
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-12-23 22:11:45.714
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!

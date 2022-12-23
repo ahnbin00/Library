@@ -14,9 +14,6 @@
 	h3, h5{
 		font-family: 'Jua', sans-serif;
 	}
-	form:not(){
-		
-	}
 </style>
 </head>
 <body style="width:1200px;text-align:center;margin: 0 auto;">
