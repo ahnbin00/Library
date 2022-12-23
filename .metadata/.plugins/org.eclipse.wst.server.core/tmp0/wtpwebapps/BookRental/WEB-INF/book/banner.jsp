@@ -51,6 +51,9 @@ font-family: 'Jua', sans-serif;
 			<li class="nav-item">
 			<a class="nav-link" href="getQnaListManage.do">도서관에 물어보세요</a>
 			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="#">희망도서 신청현황</a>
+			</li>
          </c:if>
         </li>
         <c:if test="${id ne 'admin' }">
@@ -75,6 +78,9 @@ font-family: 'Jua', sans-serif;
         <li class="nav-item">
           <a class="nav-link" href="getQnaList.do" style="font-size:18px">도서관에 물어보세요</a>
         </li>
+        <li class="nav-item">
+			<a class="nav-link" href="appForBooks.do">희망도서 신청</a>
+		</li>
       </ul>
       </c:if>
 <!--       <form class="d-flex"> -->
