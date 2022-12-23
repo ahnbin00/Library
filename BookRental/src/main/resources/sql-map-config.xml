@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+		</settings>
+	<!-- Alias 설정 Alias : 별명,별칭.. select title,writer||'님'as w from board -->
+	<typeAliases>
+		<typeAlias alias="book" type="com.company.biz.book.BookVO"/>
+		<typeAlias alias="rental" type="com.company.biz.rental.RentalVO"/>
+		<typeAlias alias="member" type="com.company.biz.member.MemberVO"/>
+		<typeAlias alias="qna" type="com.company.biz.qna.QnaVO"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mappings/book-mapping.xml"/>
+		<mapper resource="mappings/rental-mapping.xml"/>
+		<mapper resource="mappings/member-mapping.xml"/>
+		<mapper resource="mappings/qna-mapping.xml"/>
+	</mappers>
+</configuration>

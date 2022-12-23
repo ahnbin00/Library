@@ -1,0 +1,14 @@
+package com.company;
+
+public class test {
+	public static void main(String[] args) {
+		int Sum=1;
+		for(int i=1;i<=100;i++) {
+			Sum=i*Sum;
+		}
+		System.out.println("1부터 100까지의 곱: "+Sum);
+		
+		
+		
+	}
+}

@@ -1,0 +1,11 @@
+package com.company;
+
+public class test {
+	public static void main(String[] args) {
+		for(int i=1;i<=100;i++) {
+			int sum=0;
+			sum+=i;
+		}
+		System.out.println("1부터 100까지의 합: "+sum+);
+	}
+}

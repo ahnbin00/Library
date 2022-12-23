@@ -1,0 +1,15 @@
+package com.company;
+
+public class test {
+	public static void main(String[] args) {
+		int Sum=0;
+		for(int i=0;(i*3)<=100;i++) {
+			System.out.println(i*3);
+			Sum+=(i*3);
+		}
+		System.out.println("1부터 100까지의 3의 배수의 합: "+Sum);
+		
+		
+		
+	}
+}

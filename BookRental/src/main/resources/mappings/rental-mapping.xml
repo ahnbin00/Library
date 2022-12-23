@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="RentalDAO">
+	<insert id="insertRental">
+		insert into rental(id,isbn,title,rentalseq) values(#{id},#{isbn},#{title},(select nvl(max(rentalseq), 0)+1 from rental))
+	</insert>
+	
+	<delete id="deleteRental">
+		delete from rental where rentalseq=#{rentalseq}
+	</delete>
+	
+	<select id="getRentalList" resultType="rental">
+		select id,isbn,title,TO_CHAR(rentday,'YYYY-MM-DD') as rentday,TO_CHAR(returnday,'YYYY-MM-DD') as returnday,rentalseq,restday from rental where 1=1
+		<if test="searchCondition=='TITLE'">
+			and title like '%' || #{searchKeyword} || '%' 
+		</if>
+		<if test="searchCondition=='ID'">
+			and id like '%' || #{searchKeyword} || '%'
+		</if>
+		<if test="searchCondition=='ISBN'">
+			and isbn like '%' || #{searchKeyword} || '%'
+		</if>
+		order by restday
+	</select>
+	
+	<update id="updateRentalList">
+		update rental set restday = ceil(returnday-sysdate)
+	</update>
+	
+	<update id="extendRental">
+		update rental set returnday=(select returnday+7 from rental where rentalseq=#{rentalseq}) where rentalseq=#{rentalseq}
+	</update>
+	
+	<select id="memberRental" resultType="rental">
+		select id,isbn,title,TO_CHAR(rentday,'YYYY-MM-DD') as rentday,TO_CHAR(returnday,'YYYY-MM-DD') as returnday,restday from rental where id=#{id} 
+	</select>
+</mapper>

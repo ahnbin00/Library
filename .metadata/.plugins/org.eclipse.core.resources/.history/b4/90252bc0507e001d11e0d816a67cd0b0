@@ -1,0 +1,19 @@
+package com.company;
+
+public class test {
+	public static void main(String[] args) {
+		int Sum=0;
+		int i=1;
+		int j=0;
+				
+		while(j<=100) {
+			j++;
+			
+		}
+		
+		System.out.println("1부터 100까지의 곱: "+Sum);
+		
+		
+		
+	}
+}

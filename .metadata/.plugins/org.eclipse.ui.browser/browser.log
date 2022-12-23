@@ -1,0 +1,18 @@
+
+12월 18, 2022 05:47:46.184 NEW SESSION
+12월 18, 2022 05:47:46.184 [2896:14796:1218/054746.181:ERROR:device_event_log_impl.cc(215)] [05:47:46.181] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 18, 2022 05:47:46.187 [2896:14796:1218/054746.186:ERROR:device_event_log_impl.cc(215)] [05:47:46.186] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+
+12월 22, 2022 02:47:16.732 NEW SESSION
+12월 22, 2022 02:47:16.732 [1036:9540:1222/024716.731:ERROR:device_event_log_impl.cc(215)] [02:47:16.730] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 22, 2022 02:47:16.734 [1036:9540:1222/024716.734:ERROR:device_event_log_impl.cc(215)] [02:47:16.733] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 22, 2022 04:10:52.53 [1222/041052.050:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\AYB\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\1118de57-ab8e-48b9-96da-4d17be715fa5: 지정된 파일을 찾을 수 없습니다. (0x2)
+12월 22, 2022 04:10:52.89 [1222/041052.086:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\AYB\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\1118de57-ab8e-48b9-96da-4d17be715fa5: 지정된 파일을 찾을 수 없습니다. (0x2)
+12월 22, 2022 04:10:52.91 [1222/041052.091:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\AYB\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\1118de57-ab8e-48b9-96da-4d17be715fa5: 지정된 파일을 찾을 수 없습니다. (0x2)
+12월 22, 2022 04:10:52.103 [1222/041052.102:ERROR:filesystem_win.cc(130)] GetFileAttributes C:\Users\AYB\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\1118de57-ab8e-48b9-96da-4d17be715fa5: 지정된 파일을 찾을 수 없습니다. (0x2)
+12월 22, 2022 04:10:54.641 [1036:9540:1222/041054.640:ERROR:sharing_service.cc(252)] Device un-registration failed with fatal error
+
+12월 22, 2022 11:49:55.177 NEW SESSION
+12월 22, 2022 11:49:55.177 [12572:9824:1222/114955.175:ERROR:device_event_log_impl.cc(215)] [11:49:55.175] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 22, 2022 11:49:55.178 [12572:9824:1222/114955.177:ERROR:device_event_log_impl.cc(215)] [11:49:55.177] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 22, 2022 11:55:15.838 [12572:9824:1222/115515.837:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
