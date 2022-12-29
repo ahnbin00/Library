@@ -17,7 +17,7 @@ width: 130px
 </head>
 <body style="width:1200px; text-align:center; margin: 0 auto;" >
 	   <header>
-      <h1 style="text-align: center; padding-top: 30px; padding-bottom: 30px;"><img alt="로고" src="resources/logo.png" width="200px" height="100px"></h1>
+      <h1 style="text-align: center; padding-top: 30px; padding-bottom: 30px;"><a href="index.do"><img alt="로고" src="resources/logo.png"  width="200px" height="100px"></a></h1>
    </header>
    <nav>
    <%@ include file="/WEB-INF/book/banner.jsp" %>

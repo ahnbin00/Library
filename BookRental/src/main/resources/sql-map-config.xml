@@ -12,6 +12,7 @@
 		<typeAlias alias="rental" type="com.company.biz.rental.RentalVO"/>
 		<typeAlias alias="member" type="com.company.biz.member.MemberVO"/>
 		<typeAlias alias="qna" type="com.company.biz.qna.QnaVO"/>
+		<typeAlias alias="reply" type="com.company.biz.qna.ReplyVO"/>
 	</typeAliases>
 	
 	<mappers>

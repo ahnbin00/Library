@@ -219,13 +219,13 @@ insert into qna(seq,id,name,title,content,state) values((select nvl(max(seq), 0)
 
 ---------------------------------------------------------------------------------- replyqna
 create table replyqna(
-qnaseq number(5) not null,
-seq number(5) not null,-- qna테이블에서 seq를 참고하는 필드
+seq number(5) not null,
+replyseq number(5) not null,-- qna테이블에서 seq를 참고하는 필드
 name varchar2(30) not null,--댓글 남긴 사람 이름
 content varchar2(2000) not null,-- 본문내용
 regdate date default sysdate,
 id varchar2(10), -- 댓글 수정 삭제 인증을 위한 userid추가
-primary key(qnaseq,seq)
+primary key(seq,replyseq)
 )
 
 select * from replyqna

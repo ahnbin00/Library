@@ -30,6 +30,11 @@ public class QnaMybatisDAO {
 		mybatis.update("QnaDAO.updateCnt", vo);
 	}
 	
+	public void updateState(QnaVO vo) {
+		System.out.println("=== mybatis로 updateState() 기능 처리");
+		mybatis.update("QnaDAO.updateState", vo);
+	}
+	
 	public void deleteQna(QnaVO vo) {
 		System.out.println("=== mybatis로 deleteQna() 기능 처리");
 		mybatis.delete("QnaDAO.deleteQna", vo);

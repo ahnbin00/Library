@@ -13,6 +13,8 @@ public interface QnaService {
 	
 	void updateCnt(QnaVO vo);
 	
+	void updateState(QnaVO vo);
+	
 	void deleteQna(QnaVO vo);
 	
 	List<QnaVO> getQnaList(QnaVO vo);

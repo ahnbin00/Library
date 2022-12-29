@@ -92,6 +92,7 @@ public class BookController {
 		if(vo.getSearchKeyword()==null)
 			vo.setSearchKeyword("");
 		
+		
 		CalcPage calc=new CalcPage(bookService.selectBoardCount(vo),vo.getPageNum());
 		Map<String, Integer> map=calc.calc();
 		//수정할 곳
@@ -136,10 +137,5 @@ public class BookController {
 	@RequestMapping("/insertBookPage.do")
 	public String goToBoardPage() {
 		return "insertBook";
-	}
-	
-	@RequestMapping("/appForBooks.do")
-	public String appForBook() {
-		return "appForBooks";
 	}
 }	

@@ -9,10 +9,17 @@
 <link rel="stylesheet"
    href="resources/bootstrap.css">
 <title>문의글 작성</title>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+h3{
+font-family: 'Jua', sans-serif;
+}
+
+</style>
 </head>
 <body style="width:1200px;text-align:center;margin: 0 auto;">
    <header>
-      <h1 style="text-align: center; padding-top: 30px; padding-bottom: 30px;"><img alt="로고" src="resources/logo.png" width="200px" height="100px"></h1>
+      <h1 style="text-align: center; padding-top: 30px; padding-bottom: 30px;"><a href="index.do"><img alt="로고" src="resources/logo.png"  width="200px" height="100px"></a></h1>
    </header>
    <nav>
    <%@ include file="/WEB-INF/book/banner.jsp" %>
@@ -24,23 +31,23 @@
 	<form action="insertQna.do">
 	
    <input type="hidden" name="id" value="${id }">
-	<table>
+	<table class="table" style="width:800px;">
 		<tr>
 			<th>제목</th>
-			<td><input type="text" name="title"></td>
+			<td><input type="text" name="title" class="form-control"></td>
 		</tr>
 		<tr>
 			<th>작성자</th>
-			<td><input type="text" name="name" value="${memberName }" readonly> </td>
+			<td><input type="text" name="name" value="${memberName }" class="form-control" readonly> </td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td><textarea cols="50" rows="10" name="content"></textarea></td>
+			<td><textarea cols="50" rows="10" name="content" class="form-control"></textarea></td>
 		</tr>
 		<tr>
 			<td colspan="2">
-			<input type="submit" value="등록">
-			<input type="reset" value="다시작성">
+			<input type="submit" value="등록" class="btn btn-primary">
+			<input type="reset" value="다시작성" class="btn btn-primary">
 			</td>
 		</tr>
 	</table>

@@ -13,12 +13,16 @@
 		update qna set title=#{title},content=#{content} where seq=#{seq}
 	</update>
 	
+	<update id="updateState">
+		update qna set state='Y' where seq=#{seq}
+	</update>
+	
 	<delete id="deleteQna">
 		delete qna where seq=#{seq}
 	</delete>
 	
 	<select id="getQnaList" resultType="qna">
-		select seq,id,name,title,to_char(regdate,'YYYY-MM-DD') as regdate,state,cnt from qna
+		select seq,id,name,title,to_char(regdate,'YYYY-MM-DD') as regdate,state,cnt from qna order by seq desc
 	</select>
 	
 	<select id="getQna" resultType="qna">
@@ -30,19 +34,19 @@
 	</update>
 	
 	<insert id="insertReply">
-		insert into replyqna(seq,name,content,id)
-		values ((select nvl(max(seq),0)+1 from replyqna),#{name},#{content},#{id})
+		insert into replyqna(seq,replyseq,name,content,id)
+		values (#{seq},(select nvl(max(replyseq),0)+1 from replyqna),#{name},#{content},#{id})
 	</insert>
 	
 	<update id="updateReply">
-		update replyqna set content=#{content} where seq=#{seq}
+		update replyqna set content=#{content} where replyseq=#{replyseq}
 	</update>
 	
 	<delete id="deleteReply">
-		delete replyqna where seq=#{seq}
+		delete replyqna where replyseq=#{replyseq}
 	</delete>
 	
-	<select id="getReply" resultType="qna">
-		select qnaseq,seq,name,content,to_char(regdate,'YYYY-MM-DD')as regdate,id from replyqna where qnaseq=#{seq}
+	<select id="getReply" resultType="reply">
+		select seq,replyseq,name,content,to_char(regdate,'YYYY-MM-DD')as regdate,id from replyqna where seq=#{seq}
 	</select>
 </mapper>

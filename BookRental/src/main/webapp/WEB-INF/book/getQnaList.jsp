@@ -8,10 +8,17 @@
 <link rel="stylesheet"
    href="resources/bootstrap.css">
 <title>도서관에 물어보세요</title>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+h3{
+font-family: 'Jua', sans-serif;
+}
+
+</style>
 </head>
 <body style="width:1200px;text-align:center;margin: 0 auto;">
 	<header>
-		<h1 style="text-align: center; padding-top: 30px; padding-bottom: 30px;"><img alt="로고" src="resources/logo.png" width="200px" height="100px"></h1>
+      <h1 style="text-align: center; padding-top: 30px; padding-bottom: 30px;"><a href="index.do"><img alt="로고" src="resources/logo.png"  width="200px" height="100px"></a></h1>
 	</header>
 	<nav>
 	<%@ include file="/WEB-INF/book/banner.jsp" %>
@@ -19,7 +26,6 @@
 	<br>
 	<h3>도서관에 물어보세요</h3>
 	   <table class="table" style="width:1000px; align:center; margin:0 auto; ">
-      <c:forEach var="qnaList" items="${qnaList }">
          <tr>
 			<th>번호</th>
 			<th>제목</th>
@@ -28,6 +34,7 @@
 			<th>상태</th>
 			<th>조회수</th>
           </tr>
+          <c:forEach var="qnaList" items="${qnaList }">
           <tr>
           <td>${qnaList.seq }</td>
           <td><a href="updateCnt.do?seq=${qnaList.seq }&state=${qnaList.state }">${qnaList.title }</a></td>
@@ -35,20 +42,21 @@
           <td>${qnaList.regdate }</td>
              <td>
                 <c:if test="${qnaList.state eq 'N' }">
-                  <h5 style="color:red;line-height: 40px;" >대기중</h5>
+                  <p style="color:red;line-height: 40px;" >대기중</p>
                </c:if>
                <c:if test="${qnaList.state eq 'Y' }">
-                  <h5 style="color:black;line-height: 40px;" >답변완료</h5>
+                  <p style="color:black;line-height: 40px;" >답변완료</p>
                </c:if>
              </td>
              <td>${qnaList.cnt }</td>
           </tr>
        </c:forEach>
    </table>
+   <br>
    <c:if test="${empty id }">
    </c:if>
    <c:if test="${not empty id }">
-		<button onclick="location.href='insertQnaPage.do'">글쓰기</button>
+		<button class="btn btn-primary" onclick="location.href='insertQnaPage.do'">글쓰기</button>
    </c:if>
 
 	<%@ include file="/WEB-INF/book/footer.jsp" %>

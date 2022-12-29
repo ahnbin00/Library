@@ -25,6 +25,10 @@ public class QnaServiceImpl implements QnaService{
 	public void updateCnt(QnaVO vo) {
 		qnaMybatisDAO.updateCnt(vo);
 	}
+	
+	public void updateState(QnaVO vo) {
+		qnaMybatisDAO.updateState(vo);
+	}
 
 	public void deleteQna(QnaVO vo) {
 		qnaMybatisDAO.deleteQna(vo);

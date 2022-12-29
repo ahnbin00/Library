@@ -1,19 +1,19 @@
 package com.company.biz.qna;
 
 public class ReplyVO {
-	private int qnaseq;
 	private int seq;
+	private int replyseq;
 	private String name;
 	private String content;
 	private String regdate;
 	private String id;
 	
 	
-	public int getQnaseq() {
-		return qnaseq;
+	public int getReplyseq() {
+		return replyseq;
 	}
-	public void setQnaseq(int qnaseq) {
-		this.qnaseq = qnaseq;
+	public void setReplyseq(int replyseq) {
+		this.replyseq = replyseq;
 	}
 	public int getSeq() {
 		return seq;
