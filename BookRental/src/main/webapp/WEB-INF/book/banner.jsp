@@ -52,7 +52,7 @@ font-family: 'Jua', sans-serif;
 			<a class="nav-link" href="getQnaListManage.do">도서관에 물어보세요</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" href="getWishBooksList.do">희망도서 신청현황</a>
+			<a class="nav-link" href="getWishbookList.do">희망도서 신청현황</a>
 			</li>
          </c:if>
         </li>
@@ -68,7 +68,7 @@ font-family: 'Jua', sans-serif;
              <c:otherwise>
              <a class="dropdown-item" href="getMember.do?id=${id}" style="font-size:18px">회원정보수정</a>
             <a class="dropdown-item" href="memberRental.do?id=${id}" style="font-size:18px">회원대출정보</a>
-            <a class="dropdown-item" href="getWishBooks.do?id=${id}" style="font-size:18px">희망도서 신청내역</a>
+            <a class="dropdown-item" href="getWishbookListByID.do?id=${id}" style="font-size:18px">희망도서 신청내역</a>
              </c:otherwise>
              </c:choose>
           </div>

@@ -11,7 +11,7 @@
 <title>희망도서 신청</title>
 <style type="text/css">
    @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-   h3, h5{
+   .highlght, h3 {
       font-family: 'Jua', sans-serif;
    }
 </style>
@@ -35,7 +35,7 @@
       신청내역 및 현황은 <span style="color: blue;">[마이페이지]-[희망도서 신청내역]</span>에서 확인이 가능하며, 각 신청도서는 신청일을 기준으로 <span style="color: red;">30일</span>마다 초기화됩니다.</p>
       <br>
       <i class="bi bi-check" style="color: blue;">이용대상 :</i> <span style="color: black;">도서관 정회원</span><br>
-      <i class="bi bi-check" style="color: blue;">신청권수 :</i> <span style="color: black;">30일 기준 1인 2권</span><br>
+      <i class="bi bi-check" style="color: blue;">신청권수 :</i> <span style="color: black;">30일 기준 1인 3권</span><br>
    </div>
    <br>
    
@@ -48,19 +48,14 @@
       </c:when>
       <c:otherwise>
             <hr><br>
-            <!-- fieldset 적용하고 싶은데 적용이 안 됨 -->
-<!--             <fieldset> -->
-<!--                <legend><i class="bi bi-search"> 희망도서 검색</i></legend> -->
-<!--                <label>제목 <input type="text" id="title"></label>&nbsp;&nbsp; -->
-<!--                <label>작자 <input type="text" id="writer"></label>&nbsp;&nbsp; -->
-<!--                <label>출판사 <input type="text" id="publisher"></label>&nbsp; -->
-<!--                <button type="button" class="btn btn-info" onclick="alert('도서 api 이용 검색');">검색</button> -->
-<!--             </fieldset> -->
-            
-            <h5 style="text-align: left; padding: 0 40px;"><i class="bi bi-search"> 희망도서 검색</i></h5>
+            <h5 style="text-align: left; padding: 0 40px;">
+            	<i class="bi bi-search"> 
+            		<span class="highlght">희망도서 검색</span>&nbsp; 
+            		<span style="font-size: 13px">ex. 한강(저자), 채식주의자(제목), 한강 채식주의자(저자+제목)</span>
+            	</i>
+            </h5>
+            <br>
                <label>키워드 <input type="text" id="query"></label>&nbsp;&nbsp;
-<!--                <label>작자 <input type="text" id="writer"></label>&nbsp;&nbsp; -->
-<!--                <label>출판사 <input type="text" id="publisher"></label>&nbsp; -->
                <button type="button" class="btn btn-info" id="search">검색</button><br>
       </c:otherwise>
    </c:choose>
@@ -108,10 +103,12 @@
                        $("#resultDiv").append("<tr> <th style='width:70px; height:120px; padding: 0 10px;'>책소개</th> <td style='text-align:left; color:black;'>" + msg.documents[i].contents + "</td> </tr>");
                        
                        var book={
-                          title: msg.documents[i].title,
-                          writer: msg.documents[i].authors,
-                          publisher: msg.documents[i].publisher
-                       };
+                    		   title: msg.documents[i].title,
+                    		   authors: msg.documents[i].authors,
+                    		   publisher: msg.documents[i].publisher,
+                               thumbnail: msg.documents[i].thumbnail,
+                               isbn: msg.documents[i].isbn
+                            };
                        
                        bookArray.push(book);
                        
@@ -148,10 +145,12 @@
                            $("#resultDiv").append("<tr> <th style='width:70px; height:120px; padding: 0 10px;'>책소개</th> <td style='text-align:left; color:black;'>" + msg.documents[i].contents + "</td> </tr>");
                            
                            var book={
-                              title: msg.documents[i].title,
-                              writer: msg.documents[i].authors,
-                              publisher: msg.documents[i].publisher
-                           };
+                        		   title: msg.documents[i].title,
+                        		   authors: msg.documents[i].authors,
+                        		   publisher: msg.documents[i].publisher,
+                                   thumbnail: msg.documents[i].thumbnail,
+                                   isbn: msg.documents[i].isbn
+                                };
                            
                            bookArray.push(book);
                            
@@ -167,16 +166,19 @@
         })
  
         function insertWishBook(i){
-           var title = bookArray[i].title;
-           var writer = bookArray[i].writer;
-           var publisher = bookArray[i].publisher;
-           console.log(title);
-           console.log(writer);
-           console.log(publisher);
+        	var image = bookArray[i].thumbnail;
+        	var title = bookArray[i].title;
+           	var writer = bookArray[i].authors;
+           	var publisher = bookArray[i].publisher;
+           	var isbn = bookArray[i].isbn;
+           	var id = '<%=(String)session.getAttribute("id")%>';
+           	console.log(title);
+           	console.log(writer);
+           	console.log(publisher);
            
-           document.dataForm.method="post";
-           document.dataForm.action = "insertWishBook.do?title="+ title +"&writer="+ writer +"&publisher="+publisher;
-           document.dataForm.submit();
+           	document.dataForm.method="post";
+           	document.dataForm.action = "insertWishBook.do?id="+ id +"&isbn="+ isbn +"&image="+ image +"&title="+ title +"&writer="+ writer +"&publisher="+publisher;
+           	document.dataForm.submit();
         }
     </script>
 </html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="WishBookDAO">
+	<insert id="insertWishBook">
+		insert into wishbook(id,seq,isbn,title,writer,publisher,image) 
+		values(#{id},(select nvl(max(seq), 0)+1 from wishbook),#{isbn},#{title},#{writer},#{publisher},#{image})
+	</insert>
+	
+	<select id="countWishBook" resultType="int">
+		select count(*) from wishbook where id=#{id}
+	</select>
+	
+	<select id="getWishbookListByID" resultType="wishBook">
+		select * from wishbook where id=#{id}
+	</select>
+	
+	<select id="getWishbookList" resultType="wishBook">
+		select * from wishbook order by seq
+	</select>
+	
+	<delete id="deleteWishBookByDate">
+		delete (select * from (select sysdate-regdate as restdate from wishbook) where restdate>30)
+	</delete>
+	
+	<delete id="deleteWishbookBySeq">
+		delete from wishbook where seq=#{seq}
+	</delete>
+	
+</mapper>

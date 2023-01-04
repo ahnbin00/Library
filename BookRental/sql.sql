@@ -1,7 +1,7 @@
 ------------------------------------------------------------------------------------book
 create table book(
 seq number(20) not null,
-isbn varchar2(14) primary key not null,
+isbn varchar2(24) primary key not null,
 title varchar2(100) not null,
 writer varchar2(50) not null,
 publisher varchar2(50) not null,
@@ -131,6 +131,8 @@ insert into book(seq,isbn,title,writer,publisher,content,image) values((select n
 insert into book(seq,isbn,title,writer,publisher,content,image) values((select nvl(max(seq), 0)+1 from book),'9791137315761','주술회전 15',
 '아쿠타미 게게','서울미디어코믹스/DCW','스쿠나의 대량 살인, 나나미 켄토의 죽음. 그리고 마히토의 손에 의해, 쿠기사키마저! 자신의 죄의 무게로 인해 이타도리의 마음이 한계를 넘어선 그때, 친한 친구의 위기 상황에 그 남자가 달려 온다.',
 'https://image.aladin.co.kr/product/27324/60/cover500/e572538416_1.jpg');
+
+select count(*) from book;
 --------------------------------------------------------------------------------------------member
 create table member(
 id varchar2(10) primary key,
@@ -228,6 +230,38 @@ id varchar2(10), -- 댓글 수정 삭제 인증을 위한 userid추가
 primary key(seq,replyseq)
 )
 
-select * from replyqna
+select count(*) from replyqna;
 
 drop table replyqna
+
+--------------------------------------------------------------------------------- wishbook
+create table wishbook(
+seq number(20) primary key, -- 신청순서
+id varchar2(10) not null, -- 신청자 아이디
+isbn varchar2(30) not null, -- isbn
+title varchar2(100) not null, -- 제목
+writer varchar2(100) not null, -- 저자
+publisher varchar2(50) not null, -- 출판사
+image varchar2(200) not null, -- 표지
+regdate date default sysdate, -- 신청일
+state varchar2(2) default 'W' not null -- 기본상태: w(대기 중)
+)
+
+insert into wishbook(id,seq,isbn,title,writer,publisher,content,image) 
+values();
+insert into wishbook(seq,id,isbn,title,writer,publisher,image,regdate) 
+values((select nvl(max(seq), 0)+1 from wishbook),'kim','1214545555','안녕','김청구','우리집','123454','2022-12-04');
+
+select * from wishbook
+
+select * from (select sysdate-regdate as restdate from wishbook) where restdate>30;
+
+select sysdate-regdate as restdate from wishbook
+
+select count(*) from wishbook where id='hong';
+select * from wishbook order by seq
+drop table wishbook
+
+delete (select * from (select sysdate-regdate as restdate from wishbook) where restdate>30)
+
+delete from wishbook where seq=1;

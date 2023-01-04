@@ -13,6 +13,7 @@
 		<typeAlias alias="member" type="com.company.biz.member.MemberVO"/>
 		<typeAlias alias="qna" type="com.company.biz.qna.QnaVO"/>
 		<typeAlias alias="reply" type="com.company.biz.qna.ReplyVO"/>
+		<typeAlias alias="wishBook" type="com.company.biz.wishBook.WishBookVO"/>
 	</typeAliases>
 	
 	<mappers>
@@ -20,5 +21,6 @@
 		<mapper resource="mappings/rental-mapping.xml"/>
 		<mapper resource="mappings/member-mapping.xml"/>
 		<mapper resource="mappings/qna-mapping.xml"/>
+		<mapper resource="mappings/wishBook-mapping.xml"/>
 	</mappers>
 </configuration>
