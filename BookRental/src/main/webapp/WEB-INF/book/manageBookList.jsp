@@ -28,6 +28,16 @@ width: 80px;
 .textLeft{
 text-align: left;
 }
+.moveTopBtn{
+	position: fixed;
+	bottom: 8em;
+	right: 3rem;
+}
+.moveBottomBtn{
+	 position: fixed;
+	 bottom: 4rem;
+	 right: 3rem;
+}
 </style>
 </head>
 <body style="width:1200px; text-align:center; margin: 0 auto;" >
@@ -103,6 +113,14 @@ text-align: left;
    <div style="width: 100px; float: right;">
       <button type="button" class="btn btn-info" onclick="location.href='insertBookPage.do'">새 책 등록</button>
    </div>
+   
+      <!-- 페이지 상하단 이동 버튼 -->
+      <div class="moveTopBtn" style="cursor:pointer;" onclick="window.scrollTo(0,0);">
+      	<i style="font-size: 40px" class="bi bi-arrow-up-square-fill"></i>
+      </div>
+      <div class="moveBottomBtn" style="cursor:pointer;" onclick="window.scrollTo(0,document.body.scrollHeight);">
+      	<i style="font-size: 40px" class="bi bi-arrow-down-square-fill"></i>
+      </div>
    
    <!-- 페이징 --> 
  	<div>

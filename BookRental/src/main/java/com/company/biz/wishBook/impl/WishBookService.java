@@ -21,4 +21,12 @@ public interface WishBookService {
 	
 	// 관리자 - 신청현황 관리
 	List<WishBookVO> getWishbookList(WishBookVO vo);
+	
+	WishBookVO getWishbookByISBN(WishBookVO vo);
+	
+	void updateWishbookToP(WishBookVO vo);
+	
+	void updateWishbookToX(WishBookVO vo);
+	
+	void updateWishbookToC(WishBookVO vo);
 }

@@ -13,14 +13,9 @@
 		where id=#{id}
 	</update>
 	
-	<!-- 겹치는 것 1 -->
-	<select id="getMember" resultType="member">
+	<select id="getMemberToLogin" resultType="member">
 		select * from member where id=#{id} and password=#{password}
 	</select>
-<!-- 겹치는 것 2 -->
-<!-- 	<select id="getMember" resultType="member">
-		select * from member where id=#{id}
-	</select> -->
 	
 	<select id="getMemberInfo" resultType="member">
 		select * from member where id=#{id}

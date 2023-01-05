@@ -18,8 +18,8 @@ public class MemberServiceImpl implements MemberService{
 		memberMyBatisDAO.insertMember(vo);
 	}
 
-	public MemberVO getMember(MemberVO vo) {
-		return memberMyBatisDAO.getMember(vo);
+	public MemberVO getMemberToLogin(MemberVO vo) {
+		return memberMyBatisDAO.getMemberToLogin(vo);
 	}
 
 	public void updateMember(MemberVO vo) {

@@ -29,16 +29,6 @@ background-color: #78c2ad;
 color: white;
 border-radius:5px; 
 }
-.moveTopBtn{
-	position: fixed;
-	bottom: 8em;
-	right: 3rem;
-}
-.moveBottomBtn{
-	 position: fixed;
-	 bottom: 4rem;
-	 right: 3rem;
-}
 </style>
 </head>
 <body style="width:1200px;text-align:center;margin: 0 auto;">
@@ -78,7 +68,10 @@ border-radius:5px;
 						<td>${wishbookList.title}</td>
 						<td>${wishbookList.writer}</td>
 						<td>${wishbookList.publisher}</td>
-						<td><button class="btn btn-info" onclick="location.href='updateWishbookToC.do?isbn=${wishbookList.isbn}'">비치완료</button></td>
+						<td style="text-align: center;">
+<%-- 							<button class="btn btn-info" onclick="location.href='updateWishbookToC.do?isbn=${wishbookList.isbn}'">비치완료</button> --%>
+							<button class="btn btn-info" onclick="window.open('moveToInsertBookPage.do?isbn=${wishbookList.isbn}', 'window_name', 'width=1040, height=620, location=no, status=no, scrollbars=yes')">등록하기</button>
+						</td>
 					</c:when>
 				</c:choose>
 			</tr>

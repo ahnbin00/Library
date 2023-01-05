@@ -3,10 +3,8 @@ package com.company.biz.member;
 import java.util.List;
 
 public interface MemberService {
-
-//	MemberVO getMember(MemberVO vo);
 	
-	MemberVO getMember(MemberVO vo);
+	MemberVO getMemberToLogin(MemberVO vo);
 
 	void insertMember(MemberVO vo);
 	

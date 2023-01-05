@@ -1,9 +1,9 @@
 ------------------------------------------------------------------------------------book
 create table book(
 seq number(20) not null,
-isbn varchar2(24) primary key not null,
+isbn varchar2(30) primary key not null,
 title varchar2(100) not null,
-writer varchar2(50) not null,
+writer varchar2(100) not null,
 publisher varchar2(50) not null,
 content varchar2(1000) not null,
 image varchar2(200) not null,

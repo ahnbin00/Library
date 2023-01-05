@@ -16,9 +16,26 @@
 		select * from wishbook where id=#{id}
 	</select>
 	
+	<select id="getWishbookByISBN" resultType="wishBook">
+		select * from wishbook where isbn=#{isbn}
+	</select>
+	
 	<select id="getWishbookList" resultType="wishBook">
 		select * from wishbook order by seq
 	</select>
+	
+	<update id="updateWishbookToP">
+		update wishbook set state='P' where isbn=#{isbn}
+	</update>
+	
+	<update id="updateWishbookToX">
+		update wishbook set state='X' where isbn=#{isbn}
+	</update>
+	
+	<!-- 비치완료 - insertBook.do가 함께 이뤄져야 함 -->
+	<update id="updateWishbookToC">
+		update wishbook set state='C' where isbn=#{isbn}
+	</update>
 	
 	<delete id="deleteWishBookByDate">
 		delete (select * from (select sysdate-regdate as restdate from wishbook) where restdate>30)

@@ -60,12 +60,11 @@ th, td{
           <th></th>
           <td align="right">
              <input type="submit" class="btn btn-info" value="등록">&nbsp;&nbsp;
-             <input type="reset" class="btn btn-info"  value="취소">
+             <input type="reset" class="btn btn-danger"  value="취소">
           </td>
        </tr>
    </table>
    </form>
-   </div>
    
    <%@ include file="/WEB-INF/book/footer.jsp" %>
 </body>

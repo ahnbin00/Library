@@ -10,10 +10,20 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 <title>희망도서 신청</title>
 <style type="text/css">
-   @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-   .highlght, h3 {
-      font-family: 'Jua', sans-serif;
-   }
+   	@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+   	.highlght, h3 {
+   		font-family: 'Jua', sans-serif;
+   	}
+   	.moveTopBtn{
+		position: fixed;
+		bottom: 8em;
+		right: 3rem;
+	}
+	.moveBottomBtn{
+		 position: fixed;
+		 bottom: 4rem;
+		 right: 3rem;
+	}
 </style>
 </head>
 <body style="width:1200px;text-align:center;margin: 0 auto;">
@@ -67,6 +77,14 @@
       <div id="resultDiv" style="width: 1000px;margin: 0 auto;"></div>
    </form>
    <hr>
+   
+      <!-- 페이지 상하단 이동 버튼 -->
+      <div class="moveTopBtn" style="cursor:pointer;" onclick="window.scrollTo(0,0);">
+      	<i style="font-size: 40px" class="bi bi-arrow-up-square-fill"></i>
+      </div>
+      <div class="moveBottomBtn" style="cursor:pointer;" onclick="window.scrollTo(0,document.body.scrollHeight);">
+      	<i style="font-size: 40px" class="bi bi-arrow-down-square-fill"></i>
+      </div>
    
    <!-- footer -->
    <%@ include file="/WEB-INF/book/footer.jsp" %>

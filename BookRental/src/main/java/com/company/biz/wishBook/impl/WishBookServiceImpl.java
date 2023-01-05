@@ -35,4 +35,20 @@ public class WishBookServiceImpl implements WishBookService {
 	public List<WishBookVO> getWishbookList(WishBookVO vo) {
 		return wishBookMybatisDAO.getWishbookList(vo);
 	}
+	
+	public WishBookVO getWishbookByISBN(WishBookVO vo) {
+		return wishBookMybatisDAO.getWishbookByISBN(vo);
+	}
+
+	public void updateWishbookToP(WishBookVO vo) {
+		wishBookMybatisDAO.updateWishbookToP(vo);
+	}
+
+	public void updateWishbookToX(WishBookVO vo) {
+		wishBookMybatisDAO.updateWishbookToX(vo);
+	}
+
+	public void updateWishbookToC(WishBookVO vo) {
+		wishBookMybatisDAO.updateWishbookToC(vo);
+	}
 }

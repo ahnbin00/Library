@@ -23,9 +23,9 @@ public class MemberMyBatisDAO {
 		mybatis.update("MemberDAO.updateMember", vo);
 	}
 	
-	public MemberVO getMember(MemberVO vo) {
-		System.out.println("mybatis getMember실행");
-		return mybatis.selectOne("MemberDAO.getMember", vo);
+	public MemberVO getMemberToLogin(MemberVO vo) {
+		System.out.println("mybatis getMemberToLogin실행");
+		return mybatis.selectOne("MemberDAO.getMemberToLogin", vo);
 	}
 	
 //	public MemberVO getMember(MemberVO vo) {

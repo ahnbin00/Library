@@ -74,13 +74,13 @@ border-radius:5px;
 						</td>
 					</c:when>
 					<c:when test="${wishbookList.state == 'X'}">
-						<td style="color: red;"> 탈락 </td>
+						<td style="color: red;text-align: center;"> 심사탈락 </td>
 					</c:when>
 					<c:when test="${wishbookList.state == 'P'}">
-						<td style="color: blue;"> 준비중 </td>
+						<td style="color: blue;text-align: center;"> 준비중 </td>
 					</c:when>
 					<c:when test="${wishbookList.state == 'C'}">
-						<td style="color: yellow;"> 비치완료 </td>
+						<td style="color: orange;text-align: center;"> 비치완료 </td>
 						
 					</c:when>
 				</c:choose>

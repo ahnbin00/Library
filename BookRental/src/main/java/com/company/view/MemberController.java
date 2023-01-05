@@ -34,10 +34,10 @@ public class MemberController {
       if(vo.getId()==null || vo.getId().equals(""))
          throw new IllegalArgumentException("아이디는 반드시 입력해야 합니다.");
       // 3. 화면 네비게이션
-      if (memberService.getMember(vo) != null) {
+      if (memberService.getMemberToLogin(vo) != null) {
     	 // id랑 pw로 검색을 해서 해당 회원이 존재할 때,
-         session.setAttribute("memberName", memberService.getMember(vo).getName());
-         session.setAttribute("id", memberService.getMember(vo).getId());
+         session.setAttribute("memberName", memberService.getMemberToLogin(vo).getName());
+         session.setAttribute("id", memberService.getMemberToLogin(vo).getId());
          //session.setAttribute("vo",memberService.getmember(vo));
          return "redirect:startPage.jsp";
       } else {
@@ -77,7 +77,7 @@ public class MemberController {
    @RequestMapping(value="/getMember.do",method = RequestMethod.GET)
    public String getMemberView(MemberVO vo,HttpSession session){
       System.out.println("회원멤버화면 요청.");
-      session.setAttribute("vo",memberService.getMember(vo));
+      session.setAttribute("vo",memberService.getMemberInfo(vo));
       return "getMember";
    }
    @RequestMapping(value="/getMember.do",method = RequestMethod.POST)
@@ -87,8 +87,8 @@ public class MemberController {
       request.setCharacterEncoding("UTF-8");
       response.setContentType("text/html;charset=UTF-8");
       PrintWriter out=response.getWriter();
-      System.out.println(memberService.getMember(vo).getId());
-      out.print("<script>alert('수정되었습니다.');location.href='getMember.do?id="+memberService.getMember(vo).getId()+"';</script>");
+      System.out.println(memberService.getMemberInfo(vo).getId());
+      out.print("<script>alert('수정되었습니다.');location.href='getMember.do?id="+memberService.getMemberInfo(vo).getId()+"';</script>");
    }
    
    @RequestMapping("/logout.do")
@@ -104,7 +104,7 @@ public class MemberController {
    public void idCheckCtrl(MemberVO vo,HttpServletResponse response) throws IOException {
       System.out.println("아이디 중복 체크");
       PrintWriter out=response.getWriter();
-      if(memberService.getMember(vo)!=null) {
+      if(memberService.getMemberInfo(vo)!=null) {
          //아이디가 존재하는 경우
          out.print("NOT_USE_ID");
       }else {
